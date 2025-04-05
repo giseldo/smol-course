@@ -2,29 +2,11 @@
 
 # a smol course
 
-This is a practical course on aligning language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines. There are minimal GPU requirements and no paid services. The course is based on the [SmolLM2](https://github.com/huggingface/smollm/tree/main) series of models, but you can transfer the skills you learn here to larger models or other small language models.
-
-<a href="http://hf.co/join/discord">
-<img src="https://img.shields.io/badge/Discord-7289DA?&logo=discord&logoColor=white"/>
-</a>
-
-<div style="background: linear-gradient(to right, #e0f7fa, #e1bee7, orange); padding: 20px; border-radius: 5px; margin-bottom: 20px; color: purple;">
-    <h2>Participation is open, free, and now!</h2>
-    <p>This course is open and peer reviewed. To get involved with the course <strong>open a pull request</strong> and submit your work for review. Here are the steps:</p>
-    <ol>
-        <li>Fork the repo <a href="https://github.com/huggingface/smol-course/fork">here</a></li>
-        <li>Read the material, make changes, do the exercises, add your own examples.</li>
-        <li>Open a PR on the december_2024 branch</li>
-        <li>Get it reviewed and merged</li>
-    </ol>
-    <p>This should help you learn and to build a community-driven course that is always improving.</p>
-</div>
-
-We can discuss the process in this [discussion thread](https://github.com/huggingface/smol-course/discussions/2#discussion-7602932).
+Este é um curso prático sobre como alinhar modelos de linguagem para casos de uso específicos. É uma maneira prática de começar a trabalhar com o alinhamento de modelos de linguagem, pois tudo pode ser executado na maioria das máquinas locais. Os requisitos de GPU são mínimos e não há necessidade de serviços pagos. O curso é baseado na série de modelos [SmolLM2](https://github.com/huggingface/smollm/tree/main), mas as habilidades aprendidas aqui podem ser transferidas para modelos maiores ou outros modelos de linguagem pequenos.
 
 ## Course Outline
 
-This course provides a practical, hands-on approach to working with small language models, from initial training through to production deployment.
+Este curso oferece uma abordagem prática e prática para trabalhar com pequenos modelos de linguagem, desde o treinamento inicial até a implantação em produção.
 
 | Module | Description | Status | Release Date |
 |--------|-------------|---------|--------------|
@@ -37,51 +19,42 @@ This course provides a practical, hands-on approach to working with small langua
 | [Inference](./7_inference) | Infer with models efficiently | ✅ Ready | Jan 8, 2025 |
 | [Agents](./8_agents) | Build your own agentic AI | ✅ Ready | Jan 13, 2025 ||
 
-## Why Small Language Models?
+## Por que Modelos de Linguagem Pequenos?
 
-While large language models have shown impressive capabilities, they often require significant computational resources and can be overkill for focused applications. Small language models offer several advantages for domain-specific applications:
+Embora os grandes modelos de linguagem tenham demonstrado capacidades impressionantes, eles frequentemente exigem recursos computacionais significativos e podem ser excessivos para aplicações focadas. Modelos de linguagem pequenos oferecem várias vantagens para aplicações específicas de domínio:
 
-- **Efficiency**: Require significantly less computational resources to train and deploy
-- **Customization**: Easier to fine-tune and adapt to specific domains
-- **Control**: Better understanding and control of model behavior
-- **Cost**: Lower operational costs for training and inference
-- **Privacy**: Can be run locally without sending data to external APIs
-- **Green Technology**: Advocates efficient usage of resources with reduced carbon footprint
-- **Easier Academic Research Development**: Provides an easy starter for academic research with cutting-edge LLMs with less logistical constraints
+- **Eficiência**: Requerem significativamente menos recursos computacionais para treinamento e implantação.
+- **Personalização**: Mais fáceis de ajustar e adaptar a domínios específicos.
+- **Controle**: Maior compreensão e controle sobre o comportamento do modelo.
+- **Custo**: Custos operacionais mais baixos para treinamento e inferência.
+- **Privacidade**: Podem ser executados localmente sem enviar dados para APIs externas.
+- **Tecnologia Verde**: Promovem o uso eficiente de recursos com menor pegada de carbono.
+- **Facilidade para Pesquisa Acadêmica**: Oferecem um ponto de partida acessível para pesquisas acadêmicas com LLMs de ponta e menos restrições logísticas.
+## Pré-requisitos
 
-## Prerequisites
+Antes de começar, certifique-se de ter o seguinte:
+- Compreensão básica de aprendizado de máquina e processamento de linguagem natural.
+- Familiaridade com Python, PyTorch e a biblioteca `transformers`.
+- Acesso a um modelo de linguagem pré-treinado e a um conjunto de dados rotulado.
+## Instalação
 
-Before starting, ensure you have the following:
-- Basic understanding of machine learning and natural language processing.
-- Familiarity with Python, PyTorch, and the `transformers` library.
-- Access to a pre-trained language model and a labeled dataset.
+### Windows
 
-## Installation
-
-We maintain the course as a package so you can install dependencies easily via a package manager. We recommend [uv](https://github.com/astral-sh/uv) for this purpose, but you could use alternatives like `pip` or `pdm`.
-
-### Using `uv`
-
-With `uv` installed, you can install the course like this:
+Todos os exemplos são executados no mesmo ambiente **python 3.11**, então você deve criar um ambiente e instalar as dependências assim:
 
 ```bash
-uv venv --python 3.11.0
-uv sync
-```
-
-### Using `pip`
-
-All the examples run in the same **python 3.11** environment, so you should create an environment and install dependencies like this:
-
-```bash
-# python -m venv .venv
-# source .venv/bin/activate
+python -m venv .venv
+.venv/bin/activate
 pip install -r requirements.txt
 ```
 
 ### Google Colab
 
-**From Google Colab** you will need to install dependencies flexibly based on the hardware you're using. Like this:
+**No Google Colab**, você precisará instalar as dependências de forma flexível com base no hardware que está utilizando. Assim:
+
+```bash
+!pip install transformers trl datasets huggingface_hub
+```
 
 ```bash
 pip install transformers trl datasets huggingface_hub
